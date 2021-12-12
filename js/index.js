@@ -17,7 +17,7 @@ window.onload = function()
 	canvas.width = W;
 	canvas.height = H;
 
-	//console.log("my color request: "+colorsArray);
+	console.log("my color request: "+colorsArray);
 
 	/*===============Box class=================================*/
 	function Box(_x, _y)
@@ -31,18 +31,18 @@ window.onload = function()
 		this.yVel = 1;
 
 		//the box width and height
-		this.width = 20;
-		this.height = 20;
+		this.width = 30;
+		this.height = 30;
 
 		//random colors for our box
-		/*this.r = Math.round(Math.random()*255);
+		this.r = Math.round(Math.random()*255);
 		this.g = Math.round(Math.random()*255);
-		this.b = Math.round(Math.random()*255);*/
+		this.b = Math.round(Math.random()*255);
 
-		this.randomColor = randomInt(0,colorsArray.colors.length-1);
-		this.r = colorsArray.colors[this.randomColor].red;
-		this.g = colorsArray.colors[this.randomColor].green;
-		this.b = colorsArray.colors[this.randomColor].blue;
+		this.randomColor = randomInt(0,colorsArray.length-1);
+		this.r = colorsArray[this.randomColor].red;
+		this.g = colorsArray[this.randomColor].green;
+		this.b = colorsArray[this.randomColor].blue;
 
 		console.log(colorsArray);
 
@@ -72,7 +72,7 @@ window.onload = function()
 			if(this.x > W - this.width)
 			{
 				this.x = W - this.width; //set its position to 0
-				this.xVel *= -1; //make it bounce
+				this.xVel *= -2; //make it bounce
 			}
 
 			//check the top border
